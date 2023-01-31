@@ -105,10 +105,11 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 ## Client Order Information
 ```
 #### ![image](https://user-images.githubusercontent.com/62974484/215639045-1f73d521-51a5-400c-b096-c288e6340d78.png)
-### <br/><br/><br/>
+### <br/>
 
-### 테이블 작성 방법
-### 마크다운과 똑같다. | 으로 구분해서 테이블을 작성하면 된다.
+### 마크다운 테이블 작성 방법
+### | 으로 구분해서 테이블을 작성하면 된다.
+### 맨위 || 영역은 헤더 부분이다.
 ### bold 글씨는 \*\*글씨\*\* 로 묶는다.
 ### ex)
 ```
@@ -123,4 +124,42 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 |**Number of Samples**|60|
 |**Genome Source**|[NCBI link](https://www.ncbi.nlm.nih.gov/assembly/GCF_000013425.1/)|
 |||
+```
+### <br/>
+
+### 점 항목
+### 마크다운과 똑같이 - 으로 작성한다.
+### bold 처리는 \*\*글씨\*\* 로 묶는다.
+#### ![image](https://user-images.githubusercontent.com/62974484/215640357-4798f2e4-70b5-4c94-985f-67cc8a7f1ff9.png)
+### <br/>
+
+### R 테이블 작성 방법
+### DT:datatable(data, option = list(option ... )) 을 이용한다.
+- option
+  - pageLength : 한 페이지에 보여주는 행 개수
+  - autoWidth : 너비 사이즈 자동 조절
+  - scrollX : 너비가 한 페이지에 다 안 들어갈 때 옆으로 스크롤해서 볼 수 있도록 함. FALSE 하면 옆으로 그대로 늘어남.
+  - css 설정 : initComplete = JS("function(settings, json) {$(this.api().table().header()).css({ 쓰고 싶은 css });}")
+### ex)
+```
+\```{r Read_Quality, echo=FALSE, warning=FALSE, include=TRUE}
+
+#input <- read_excel("snakemake@input$sequencing_stat")
+input <- read.table("./Results/Sequencing_Statistics_Result.xls", header = T)
+sort = subset(input, select=c(SampleID,TotalReads,TotalBases,GC_Rate,Q20_MoreBasesRate,Q30_MoreBasesRate))
+
+
+colnames(sort)= c("Sample ID", "Total reads", "Total bases", "GC rate","Q20 (%)","Q30 (%)")
+
+DT::datatable(
+    sort, 
+    options = list(
+        pageLength =10, 
+        autoWidth = TRUE, 
+        #scrollX=T,
+        initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'background-color': '#50388B', 'color': '#fff'});}")
+    )
+)
+
+\```
 ```
