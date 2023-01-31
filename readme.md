@@ -70,17 +70,17 @@ output:
 - include = FALSE 옵션으로 문서에는 포함시키지 않고 몰래 실행할 수 있으며, 주로 최초 설정에 이용된다.
 - echo = TRUE는 코드를 보여준다는 뜻이다. 흔히 쓰는 옵션들은 아래와 같다.
 ```
-```{r indel, include=TRUE, echo=FALSE}
-#input <- read.table("snakemake@input$multi_indels", header = T)
-input <- read.table("./Results/multisample.InDels.stat.xls", header = T)
+ ```{r indel, include=TRUE, echo=FALSE}
+ #input <- read.table("snakemake@input$multi_indels", header = T)
+ input <- read.table("./Results/multisample.InDels.stat.xls", header = T)
 
-sort<-t(input)
-colnames(sort) <- sort[1,]
-d <- as.data.frame(sort)
-d <- d[2:length(sort[,1]),]
-DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
+ sort<-t(input)
+ colnames(sort) <- sort[1,]
+ d <- as.data.frame(sort)
+ d <- d[2:length(sort[,1]),]
+ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 
-```
+ ```
 ```
 
 $$
