@@ -67,10 +67,22 @@ output:
 
 ### R 코드 작성 방법
 #### {r indel, include=TRUE, echo=FALSE} 이라고 적고 R 코드를 작성한다.
-- include = FALSE 옵션으로 문서에는 포함시키지 않고 몰래 실행할 수 있으며, 주로 최초 설정에 이용된다.
-- echo = TRUE는 코드를 보여준다는 뜻이다. 흔히 쓰는 옵션들은 아래와 같다.
+- include = FALSE 옵션으로 문서에는 포함시키지 않고 몰래 실행할 수 있으며, 주로 최초 설정에 이용된다. TRUE 로 설정하면 output 에 코드 결과가 출력된다.
+- echo = TRUE는 stdout 에 코드를 보여준다는 뜻이다 (verbose 옵션과 같음).
+- knitr::opts_chunk$set(\[옵션\]) : 추가 옵션을 설정할 수 있다.
+  - eval=F - 코드를 실행하지 않는다.
+  - echo=F - 코드를 보여주지 않는다.
+  - include=F - 실행 결과를 보여주지 않는다.
+  - message=F - 실행 때 나오는 메세지를 보여주지 않는다.
+  - warning=F - 실행 때 나오는 경고를 보여주지 않는다.
+  - error=T - 에러가 있어도 실행하고 에러코드를 보여준다.
+  - fig.height = 7 - 그림 높이, R로 그린 그림에만 해당한다.
+  - fig.width = 7 - 그림 너비, R로 그린 그림에만 해당한다.
+  - fig.align = 'center' - 그림 위치, R로 그린 그림에만 해당한다.
+##### 아래 \ 는 마크다운 문법 오류때문에 넣은 거다. 
 ```
 \```{r indel, include=TRUE, echo=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
 #input <- read.table("snakemake@input$multi_indels", header = T)
 input <- read.table("./Results/multisample.InDels.stat.xls", header = T)
 
@@ -83,6 +95,3 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 \```
 ```
 
-$$
-\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
-$$
