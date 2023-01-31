@@ -133,6 +133,34 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 #### ![image](https://user-images.githubusercontent.com/62974484/215640357-4798f2e4-70b5-4c94-985f-67cc8a7f1ff9.png)
 ### <br/>
 
+### `R 테이블 불러오는 방법`
+### read.table 을 이용한다. header = T 하면 header 를 불러온다.
+### subset 으로 컬럼 명을 지정하여 해당 컬럼만 가져올 수 있다.
+### colnames 로 column 명을 다시 지정해준다.
+```
+input <- read.table("./Results/Sequencing_Statistics_Result.xls", header = T)
+sort = subset(input, select=c(SampleID,TotalReads,TotalBases,GC_Rate,Q20_MoreBasesRate,Q30_MoreBasesRate))
+
+
+colnames(sort)= c("Sample ID", "Total reads", "Total bases", "GC rate","Q20 (%)","Q30 (%)")
+```
+### <br/>
+
+### `R 테이블 묶기`
+### cbind() 로 묶는다.
+#### \[테이블 변수 명\]$\[컬럼 명\] 으로 해당 컬럼 데이터를 가져올 수 있다.
+```
+input <- read.table("./Results/coverage_table.txt", sep = "\t", header =T)
+input2<- read.table("./Results/statistics.xls", header = T)
+
+sort<-cbind(input$Sample_ID,input2$reference_bp,input$Average_depth,input$coverage_1X_rate...,input$coverage_5X_rate...,input$coverage_10X_rate...,input$coverage_20X_rate...,input$coverage_50X_rate...)
+
+colnames(sort)=c("Sample ID","Reference Length","Average Depth", "Coverage 1X(%)", "Coverage 5X(%)", "Coverage 10X(%)", "Coverage 20X(%)", "Coverage 50X(%)")
+DT::datatable(sort, options = list(  pageLength =10, autoWidth = TRUE,
+                                  scrollX=T))
+```
+### <br/>
+
 ### `R 테이블 작성 방법`
 ### DT:datatable(data, option = list(option ... )) 을 이용한다.
 ### 옵션
