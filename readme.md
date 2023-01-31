@@ -31,7 +31,7 @@ Rscript -e "library(knitr); stitch('test.Rmd')"
 ## 사용 방법
 ### <br/>
 
-### yaml (헤더와 아웃풋 옵션 설정)
+### `yaml` (헤더와 아웃풋 옵션 설정)
 ### yaml 영역은 --- 으로 시작해서 --- 으로 끝난다.
 ### 자세한 내용은 아래 사이트를 참고한다.
 #### https://cran.r-project.org/web/packages/ymlthis/vignettes/yaml-fieldguide.html
@@ -65,7 +65,7 @@ output:
 ```
 ### <br/><br/><br/>
 
-### R 코드 작성 방법
+### `R 코드 작성 방법`
 #### {r indel, include=TRUE, echo=FALSE} 이라고 적고 R 코드를 작성한다. indel 이라고 써진 것은 code chunck 의 이름이다.
 - include = FALSE 옵션으로 문서에는 포함시키지 않고 몰래 실행할 수 있으며, 주로 최초 설정에 이용된다. TRUE 로 설정하면 output 에 코드 결과가 출력된다.
 - echo = TRUE는 stdout 에 코드를 보여준다는 뜻이다 (verbose 옵션과 같음).
@@ -97,7 +97,7 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 ```
 ### <br/><br/><br/>
 
-### 구획 나누는 방법
+### `구획 나누는 방법`
 ### 탭으로 구획을 나눠 데이터를 보여주려면 다음과 같이 작성한다.
 ### 그리고 탭을 생성하려면 ## \[탭 이름\] 으로 작성한다.
 ```
@@ -107,7 +107,7 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 #### ![image](https://user-images.githubusercontent.com/62974484/215639045-1f73d521-51a5-400c-b096-c288e6340d78.png)
 ### <br/>
 
-### 마크다운 테이블 작성 방법
+### `마크다운 테이블 작성 방법`
 ### | 으로 구분해서 테이블을 작성하면 된다.
 ### 맨위 || 영역은 헤더 부분이다.
 ### bold 글씨는 \*\*글씨\*\* 로 묶는다.
@@ -127,13 +127,13 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 ```
 ### <br/>
 
-### 점 항목
+### `점 항목`
 ### 마크다운과 똑같이 - 으로 작성한다.
 ### bold 처리는 \*\*글씨\*\* 로 묶는다.
 #### ![image](https://user-images.githubusercontent.com/62974484/215640357-4798f2e4-70b5-4c94-985f-67cc8a7f1ff9.png)
 ### <br/>
 
-### R 테이블 작성 방법
+### `R 테이블 작성 방법`
 ### DT:datatable(data, option = list(option ... )) 을 이용한다.
 - option
   - pageLength : 한 페이지에 보여주는 행 개수
