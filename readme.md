@@ -67,7 +67,7 @@ output:
 
 ### R 코드 작성 방법
 ```
-```{r indel, include=TRUE, echo=FALSE}
+``\`{r indel, include=TRUE, echo=FALSE}
 #input <- read.table("snakemake@input$multi_indels", header = T)
 input <- read.table("./Results/multisample.InDels.stat.xls", header = T)
 
@@ -77,5 +77,5 @@ d <- as.data.frame(sort)
 d <- d[2:length(sort[,1]),]
 DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 
-\```
+``\`
 ```
