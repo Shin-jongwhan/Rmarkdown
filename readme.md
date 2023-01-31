@@ -66,7 +66,7 @@ output:
 ### <br/><br/><br/>
 
 ### R 코드 작성 방법
-#### {r indel, include=TRUE, echo=FALSE} 이라고 적고 R 코드를 작성한다.
+#### {r indel, include=TRUE, echo=FALSE} 이라고 적고 R 코드를 작성한다. indel 이라고 써진 것은 code chunck 의 이름이다.
 - include = FALSE 옵션으로 문서에는 포함시키지 않고 몰래 실행할 수 있으며, 주로 최초 설정에 이용된다. TRUE 로 설정하면 output 에 코드 결과가 출력된다.
 - echo = TRUE는 stdout 에 코드를 보여준다는 뜻이다 (verbose 옵션과 같음).
 - knitr::opts_chunk$set(\[옵션\]) : 추가 옵션을 설정할 수 있다.
@@ -79,6 +79,7 @@ output:
   - fig.height = 7 - 그림 높이, R로 그린 그림에만 해당한다.
   - fig.width = 7 - 그림 너비, R로 그린 그림에만 해당한다.
   - fig.align = 'center' - 그림 위치, R로 그린 그림에만 해당한다.
+### 예시
 ##### 아래 \ 는 마크다운 문법 오류때문에 넣은 거다. 
 ```
 \```{r indel, include=TRUE, echo=FALSE}
@@ -94,4 +95,14 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 
 \```
 ```
+### <br/><br/><br/>
+
+### 구획 나누는 방법
+### 탭으로 구획을 나눠 데이터를 보여주려면 다음과 같이 작성한다.
+### 그리고 탭을 생성하려면 ## \[탭 이름\] 으로 작성한다.
+```
+# 1. Project Information{.tabset}
+## Client Order Information
+```
+#### ![image](https://user-images.githubusercontent.com/62974484/215639045-1f73d521-51a5-400c-b096-c288e6340d78.png)
 
