@@ -28,3 +28,34 @@ Rscript -e "library(knitr); stitch('test.Rmd')"
 ### <br/><br/><br/>
 
 --------------------------------------------------------------------------------------------
+## 사용 방법
+### <br/>
+
+### yaml (헤더와 아웃풋 옵션 설정)
+### yaml 영역은 --- 으로 시작해서 --- 으로 끝난다.
+- date: "`r format(Sys.Date())`" : 자동으로 현재 날짜
+```
+---
+title: "R Markdown 기초"
+subtitle: "Rmarkdown test"
+author: "신종환"
+date: "`r format(Sys.Date())`"
+output:
+  html_document:
+    fig_height: 6
+    fig_width: 10
+    highlight: textmate
+    theme: cosmo
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    fig_height: 6
+    fig_width: 10
+    toc: no
+  word_document:
+    fig_height: 6
+    fig_width: 9
+    toc: no
+---
+```
