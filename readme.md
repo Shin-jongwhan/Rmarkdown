@@ -14,5 +14,8 @@
 <br/><br/><br/>
 
 ### Linux 에서 실행하는 방법
+```
+Rscript -e "library(knitr); stitch('test.Rmd')"
+```
 #### ![image](https://user-images.githubusercontent.com/62974484/215626544-cbf92857-4c79-4d73-8638-255fb8275784.png)
 <br/><br/><br/>
