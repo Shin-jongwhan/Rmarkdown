@@ -105,4 +105,22 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 ## Client Order Information
 ```
 #### ![image](https://user-images.githubusercontent.com/62974484/215639045-1f73d521-51a5-400c-b096-c288e6340d78.png)
+### <br/><br/><br/>
 
+### 테이블 작성 방법
+### 마크다운과 똑같다. | 으로 구분해서 테이블을 작성하면 된다.
+### bold 글씨는 \*\*글씨\*\* 로 묶는다.
+### ex)
+```
+|||
+|:---:|:---:|
+|**Client**|강병수 대표님|
+|**Organization**|SYSOFT|
+|**ProjectID**|TBD221311|
+|**Service Application**|Whole Genome Re-Sequencing|
+|**Species**|Staphylococcus aureus|
+|**Assembly Accession Number**|GCF_000013425.1_ASM1342v1|
+|**Number of Samples**|60|
+|**Genome Source**|[NCBI link](https://www.ncbi.nlm.nih.gov/assembly/GCF_000013425.1/)|
+|||
+```
