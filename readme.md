@@ -135,13 +135,13 @@ DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 
 ### `R 테이블 작성 방법`
 ### DT:datatable(data, option = list(option ... )) 을 이용한다.
-- option
-  - pageLength : 한 페이지에 보여주는 행 개수
-  - autoWidth : 너비 사이즈 자동 조절
-  - scrollX : 너비가 한 페이지에 다 안 들어갈 때 옆으로 스크롤해서 볼 수 있도록 함. FALSE 하면 옆으로 그대로 늘어남.
-  - css 설정 : initComplete = JS("function(settings, json) {$(this.api().table().header()).css({ 쓰고 싶은 css });}")
-    - background-color: 헤더 색상 지정
-    - color : 행 색상 
+### 옵션
+- pageLength : 한 페이지에 보여주는 행 개수
+- autoWidth : 너비 사이즈 자동 조절
+- scrollX : 너비가 한 페이지에 다 안 들어갈 때 옆으로 스크롤해서 볼 수 있도록 함. FALSE 하면 옆으로 그대로 늘어남.
+- css 설정 : initComplete = JS("function(settings, json) {$(this.api().table().header()).css({ 쓰고 싶은 css });}")
+  - background-color: 헤더 색상 지정
+  - color : 행 색상 지정 
 #### ![image](https://user-images.githubusercontent.com/62974484/215643480-95bd08bb-653a-411c-b85b-830cac29548e.png)
 ### ex)
 ```
