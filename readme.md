@@ -66,8 +66,11 @@ output:
 ### <br/><br/><br/>
 
 ### R 코드 작성 방법
+#### {r indel, include=TRUE, echo=FALSE} 이라고 적고 R 코드를 작성한다.
+- include = FALSE 옵션으로 문서에는 포함시키지 않고 몰래 실행할 수 있으며, 주로 최초 설정에 이용된다.
+- echo = TRUE는 코드를 보여준다는 뜻이다. 흔히 쓰는 옵션들은 아래와 같다.
 ```
-``\`{r indel, include=TRUE, echo=FALSE}
+```{r indel, include=TRUE, echo=FALSE}
 #input <- read.table("snakemake@input$multi_indels", header = T)
 input <- read.table("./Results/multisample.InDels.stat.xls", header = T)
 
@@ -77,5 +80,9 @@ d <- as.data.frame(sort)
 d <- d[2:length(sort[,1]),]
 DT::datatable(d, options = list(pageLength =20, autoWidth = TRUE))
 
-``\`
 ```
+```
+
+$$
+\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
+$$
